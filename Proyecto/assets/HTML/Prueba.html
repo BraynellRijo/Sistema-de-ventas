@@ -1,0 +1,181 @@
+<link rel="stylesheet" href="assets/Css/Prueba.css">
+
+<header>
+  <nav>
+      <ul>
+          <li><a href="Index.html"><img src="assets/Imagenes/logoprovicional.png" alt="" class="logo"></a></li>
+
+          <div class="links">
+              <li><a href="#" id="link">Proveedores</a></li>
+          
+              <li><a href="#" id="link">Ventas</a></li>
+          
+              <li><a href="#" id="link">Inventario</a></li>
+              
+              <li><a href="Login.html" id="link" class="Login">Login</a></li>
+          </div>
+      </ul>
+
+  </nav>
+</header>
+
+<main>
+
+    <div class="container-Slide">
+
+      <div class="arrow-slide">
+        <ion-icon id="left1" name="chevron-back-outline" class="prev-button"></ion-icon>
+          <ion-icon id="rigth1" name="chevron-forward-outline" class="next-button">
+      </div>
+      <div class="tabs">
+          <input id="uno" type="radio" name="slider">
+          <input id="dos" type="radio" name="slider">
+          <input id="tres" type="radio" name="slider">
+
+      <div class="buttons">
+          <label for="uno"></label>    
+          <label for="dos"></label>
+          <label for="tres"></label>
+      </div>
+      
+          <div class="content-slide">
+              
+              <div class="box uno">
+                <div class="container-imgBox">
+                      <img src="" alt="">
+                </div>
+                      <div class="content-box">
+                      </div>  
+              </div>
+
+              <div class="box dos">
+                  <div class="container-imgBox">
+                  <img src="" alt="">
+              </div>
+              <div class="content-box">
+              </div>
+              </div>
+
+              <div class="box tres">
+                  <div class="container-imgBox">
+                  <img src="" alt="">
+              </div>
+                  <div class="content-box">
+                      <h3></h3>
+                  </div>
+              </div>
+
+          </div>
+      
+  </div>
+</div>
+    
+<div class="container-compras">
+    <div class="headerTable">
+      <input type="text" id="search-input" placeholder="Search...">
+      <button id="add-button">Add New Record</button>
+    </div>
+    <table id="data-table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Position</th>
+          <th>Office</th>
+          <th>Salary</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+
+        <!-- Table data will be inserted here -->
+
+      </tbody>
+    </table>
+    <div class="pagination">
+
+      <!-- Pagination buttons will be inserted here -->
+      
+    </div>
+</div>
+
+  <!-- Tabla de Proveedores -->
+  
+  <h3 class="Titulo">Listado de proveedores:</h3>
+  <input type="text" placeholder="Buscar..." id="InputBusqueda"/>
+  <table id="tablaProveedores">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Nombre del proveedor</th>
+        <th scope="col">Dirección</th>
+        <th scope="col">Correo electrónico</th>
+        <th scope="col">Teléfono</th>
+      </tr>
+    </thead>
+    <tbody id= "contenidoTabla">  
+      </tbody>
+  </table>
+
+<!-- Botones para agregar y eliminar registros -->
+<button onclick="Agregar()" id="btnAgregar">Agregar Proveedor</button>
+<br/>
+<br/>
+<button onclick="Eliminar()" id="btnEliminar">Eliminar Proveedor</button>
+
+<!-- Formulario para Agregar o Modificar un Registro -->
+</form>
+    </tbody>
+      </tr>
+    </thead>
+  </table>
+</main>
+</body>
+    <script>
+      function updateTextColor(element) {
+          var bgColor = window.getComputedStyle(element).backgroundColor;
+          var rgb = bgColor.replace(/^(rgb|rgba)\(/,'').replace(/\)$/,'').replace(/\s/g,'').split(',');
+          var yiq = ((rgb[0]*299)+(rgb[1]*587)+(rgb[2]*114))/1000;
+          var textColor = (yiq >= 128) ? 'black' : 'white';
+          element.style.color = textColor;
+        }
+
+        var element = document.getElementById('link');
+        updateTextColor(element);
+
+    </script>
+
+      <script>
+        const slidesContainer = document.querySelector('.slides');
+        const prevButton = document.querySelector('.prev-button');
+        const nextButton = document.querySelector('.next-button');
+        const indicators = document.querySelectorAll('.indicator');
+        
+        let slidePosition = 0;
+        
+        function updateSlidePosition() {
+          slidesContainer.style.transform = `translateX(-${slidePosition}%)`;
+        }
+        
+        function updateIndicators() {
+          indicators.forEach((indicator, index) => {
+            indicator.classList.toggle('active', index === slidePosition);
+          });
+        }
+        
+        function moveToPrevSlide() {
+          if (slidePosition === 0) return;
+          slidePosition--;
+          updateSlidePosition();
+          updateIndicators();
+        }
+        
+        function moveToNextSlide() {
+          if (slidePosition === 2) return;
+          slidePosition++;
+          updateSlidePosition();
+          updateIndicators();
+        }
+        
+        prevButton.addEventListener('click', moveToPrevSlide);
+        nextButton.addEventListener('click', moveToNextSlide);
+      </script>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../Css/menuV.css">
+    <link rel="stylesheet" href="../Css/registro.css">
+    <title>Registrarse</title>
+</head>
+<body>
+    <nav class="menu-v">
+        <ul class="navegacion">
+        
+          <li class="logo"><a href="Index.html" draggable="false"><img src="../Imagenes/logoprovicional.png" alt="" class="imgLogo" draggable="false"></a></li>
+      
+          <li>
+            <button class="AccionesDirectos" onclick="toggleSubMenu(this)">
+              <ion-icon name="cart-outline" class="Icono"></ion-icon>
+              <span class="link">Compras</span>
+            </button>
+            <ul class="sub-menu-v">
+              <li class="sub-link"><a href="#">Ver Compras</a></li>
+              <li class="sub-link"><a href="#">Ver Proveedores</a></li>
+              <li class="sub-link"><a href="#"></a></li>
+            </ul>
+          </li>
+          
+          <li>
+            <button class="AccionesDirectos" onclick="toggleSubMenu(this)">
+              <ion-icon name="stats-chart-outline" class="Icono"></ion-icon>
+              <span class="link">Ventas</span>
+            </button>
+            <ul class="sub-menu-v">
+              <li class="sub-link"><a href="#">Ver Ventas</a></li>
+              <li class="sub-link"><a href="#"></a></li>
+              <li class="sub-link"><a href="#"></a></li>
+            </ul>
+          </li>
+          
+          <li>
+            <button class="AccionesDirectos" onclick="toggleSubMenu(this)">
+              <ion-icon name="cube-outline" class="Icono"></ion-icon>
+              <span class="link">Inventario</span>
+            </button>
+            <ul class="sub-menu-v">
+              <li class="sub-link"><a href="#">Ver Inventario</a></li>
+              <li class="sub-link"><a href="#"></a></li>
+              <li class="sub-link"><a href="#"></a></li>
+            </ul>
+          </li>
+           </ul>
+      </nav>
+    <div class="container">
+
+                <div class="card">
+                    <div class="card-body"> 
+                        <div class="headerForm">
+                            <a href="Index.html">
+                                <img src="../Imagenes/Logoprovicional.png" class="logo" alt="">
+                            </a>
+                            <span class="eslogan">Seleccionen el eslogan que quieran</span>
+                        </div>
+        
+        
+                    <form action="" method="post">
+
+                    <button type="submit" value="IniciarSesion" name="btn_iniciarSesion" class="btnLogin">Agregar</button>
+        
+                        <div class="inputBox">
+                            <div class="containerInput">
+                                <label for="nombre" class="titleInput">Nombre</label>
+                                <input type="text" name="nombre" class="inputs" autocomplete="off">
+                            </div>        
+
+                            <div class="containerInput">
+                                <label for="apellido" class="titleInput">Apellido</label>
+                                <input type="text" name="apellido" class="inputs" autocomplete="off">
+                            </div>
+                
+                            <div class="containerInput">
+                                <label for="correo" class="titleInput">Correo electronico</label>
+                                <input type="email" name="correo" class="inputs" autocomplete="off">
+                            </div>
+
+                            <div class="containerInput">
+                                <label for="password" class="titleInput">Contraseña</label>
+                                <input type="password" name="password" class="inputs" autocomplete="off">
+                            </div>  
+
+                            <div class="containerInput">
+                                <label for="confirmPassword" class="titleInput">Confirmar contraseña</label>
+                                <input type="password" name="confirmPassword" class="inputs" autocomplete="off">
+                            </div>  
+                        </div>
+        
+
+                                </div>
+                    </form>
+                </div>
+    </div>
+    </div>
+</body>
+</html>

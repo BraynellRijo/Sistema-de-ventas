@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: poppins, Helvetica, sans-serif;
+}
+body {
+    background-color: #dde9f5;
+    height: 100vh;
+}
+a{
+    text-decoration: none;
+}
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;  
+}
+.card{
+    position: relative;
+    max-width: 584px;
+    background-color: #e5fbfe;
+    box-shadow: 4px 4px 12px 0px rgba(0, 0, 0, 0.25);
+    padding: 30px;
+    border-radius: 20px;
+}
+.card-body{
+    width: 100%;
+    text-align: start;
+    justify-content: center;
+    align-items: center;
+}
+.headerForm{
+    text-align: center;
+    color: #6c757d;
+    font-size: .8em ;
+}
+.logo{
+   width: 70%;
+   height: 75px;
+   display: block;
+   margin-left: auto;
+   margin-right: auto;
+
+}
+.containerInput{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 20px 0;
+}
+.containerInput label{
+    font-size: 1em;
+    font-weight: 500;
+}
+.inputs{
+    border: 1.5px solid rgba(0, 0, 0, 0.15);
+    padding: 10px;
+    outline: none;
+    color: #6a718c;
+    border-radius: 12px;
+    font-size: 1em;
+    transition: .5s;
+}
+.inputs:focus {
+    outline: 1.5px solid #97abfe;
+}
+.passwordContainer{
+    display: flex;
+    align-items: center;
+    font-size: .9em;
+}
+.passwordContainer a{
+    color: #0059ff;
+}
+.rememberPassword{
+    display: flex;
+    align-items: center;
+    margin-right: 30px;
+}
+input[type="checkbox"] {
+    appearance: none;
+    margin: 0 5px 0 0;
+    background-color: #fafafa;
+    border: 2px solid #cacece;
+    padding: 10px;
+    border-radius: 5px;
+    display: inline-block;
+    position: relative;
+}
+
+input[type="checkbox"]::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 25px;
+    height: 25px;
+    background-color: #4e95ff;
+    border-radius: 5px;
+    transition: .3s;
+    opacity: 0;
+}
+
+input[type="checkbox"]:checked::before {
+    opacity: 1;
+}
+
+
+.btnLogin{
+    width: 90%;
+    margin: 25px 20px;
+    border: none;
+    border-radius: 8px;
+    padding: 15px;
+    font-size: 1.4em;
+    font-weight: 600;
+    background-color: rgb(92, 182, 255);
+    cursor: pointer;
+    transition: all .5s;
+}
+
+.btnLogin:hover{
+    filter: brightness(90%);
+}
+
+.containerRegistrarse{
+    display: flex;
+    font-size: .9em;
+
+}
+.containerRegistrarse a{
+    color: #0059ff;
+}
+.registroText{
+    margin-right: 75px; 
+
+}
