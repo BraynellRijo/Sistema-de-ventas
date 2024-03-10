@@ -5,27 +5,55 @@
   box-sizing: border-box;
   font-family: poppins, Helvetica, sans-serif;
 }
-
+a{
+  text-decoration: none;
+}
 .container-compras {
     max-width: 1200px;
     margin: 0 auto;
     padding: 2rem;
   }
-  .headerTable{
+
+  .headerTable {
     width: 100%;
     display: flex;
+    margin-bottom: 5px;
     justify-content: space-between;
   }
-  input[type="text"] {
+
+  .headerTable form{
+    display: flex;
+  }
+  .iconConsulta{
+    font-size: 1.7em;
+    transition: .3s;
+    
+  }
+
+  #input_id {
     width: 100%;
-    padding: 0.5rem;
+    max-width: 300px;
+    padding: 10px;
     font-size: 1rem;
     border: 1px solid #eeeeee;
     outline: 1px solid #979797;
-    margin-right: 40px; 
     border-radius: 8px;
+    margin-right: 5px;
   }
   
+  .btnAgregar{
+    border: none;
+    padding: 12px;
+    background-color: #0d6efd;
+    font-size: 1.2em;
+    border-radius: 12px;
+  }
+  .btnAgregar a{
+    color: white;
+    text-decoration: none;
+
+  }
+
   table {
     width: 100%;
     border-collapse: collapse;
@@ -68,28 +96,50 @@
     color: white;
   }
   
-  button {
-    background-color: #007BFF;
+  .btnConsultar {
+    background-color: #7bbdff;
     padding: 0.25rem 1rem;
     border: none;
-    border-radius: 4px;
+    border-radius: 6px;
     cursor: pointer;
     margin-right: 1rem;
     opacity: 1;
+    font-size: 1em;
+    font-weight: 500;
+    justify-content: center;
+    align-items: center;
+    display: flex;
   }
   
-  button:hover{
+  .btnConsultar:hover{
     opacity: .8;
+  }
+
+  .acciones{
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   .btnEliminar {
     color: red;
-    font-size: 1.5em;
-    font-weight: 500  ;
+    font-size: 1.8em;
+    font-weight: 500 ;
     opacity: 1;
     transition: .5s;
+    cursor: pointer;
 }
   
 .btnEliminar:hover {
   opacity: 0.8;
+}
+
+.btnEditar{
+  font-weight: 500 ;
+  opacity: 1;
+  transition: .5s;
+}
+
+.btnEditar:hover {
+opacity: 0.8;
 }

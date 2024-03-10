@@ -3,6 +3,10 @@ body {
   display: flex;
   height: 100vh;
   overflow: hidden;
+
+}
+a{
+  text-decoration: none;
 }
 .menu-v{
     max-width: 350px;
@@ -11,7 +15,7 @@ body {
     display: flex;
     position: relative;
     justify-content: center;
-    background-color: #4c99ff;
+    background-color: #004cff;
     padding: 50px;
   
   }
@@ -56,7 +60,7 @@ body {
   
   .menu-v ul .link {
     font-weight: 500;
-    font-size: 1.2em;
+    font-size: 1.3em;
     color:#cccccc;
     display: inline-block;
   
@@ -83,3 +87,7 @@ body {
   } 
   
   
+  .sub-link a{
+    text-decoration: none;
+    color: #8e8e8e;
+  }

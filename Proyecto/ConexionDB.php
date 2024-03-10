@@ -12,33 +12,6 @@ if ($conn->connect_error) {
     die("Conexión fallida: " . $conn->connect_error);
 }
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-
-    $Idc = $_POST['Compra_id'];
-
-    $QueryCompras = "SELECT * FROM compras WHERE IdCompra = $Idc";
-    $resultado = mysqli_query($conn, $QueryCompras);
-
-    if (mysqli_num_rows($resultado) > 0) {
-        // Construir la tabla HTML con los datos del cliente
-        $output = "";
-        while ($Compras = mysqli_fetch_assoc($resultado)) {
-            $output .= "<tr>";
-            $output .= "<td>" . $Compras['IdCompra'] . "</td>";
-            $output .= "<td>" . $Compras['IdProveedor'] . "</td>";
-            $output .= "<td>" . $Compras['NombreProveedor'] . "</td>";
-            $output .= "<td>" . $Compras['IdProducto'] . "</td>";
-            $output .= "<td>" . $Compras['NombreProducto'] . "</td>";
-            $output .= "<td>" . $Compras['FechaCompra'] . "</td>";
-            $output .= "<td>" . $Compras['CantidadProducto'] . "</td>";
-            $output .= "<td> <ion-icon name='trash-outline' class='btnEliminar'></ion-icon> </td>";
-            $output .= "</tr>";
-        }
-        echo $output; // Enviar la tabla HTML al cliente
-    } else {
-        echo "No se encontraron datos para mostrar.";
-    }
-}
 
 
 // Verificar si se ha enviado una solicitud POST y se ha hecho clic en el botón de eliminación
@@ -60,6 +33,4 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['eliminardatos'])) {
 }
 
 
-// Cerrar la conexión
-$conn->close();
 ?>

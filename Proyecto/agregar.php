@@ -3,53 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../Css/menuV.css">
-    <link rel="stylesheet" href="../Css/registro.css">
+    <link rel="stylesheet" href="./assets/Css/registro.css">
+    <link rel="stylesheet" href="./assets/Css/menuV.css">
     <title>Registrarse</title>
 </head>
 <body>
-    <nav class="menu-v">
-        <ul class="navegacion">
-        
-          <li class="logo"><a href="Index.html" draggable="false"><img src="../Imagenes/logoprovicional.png" alt="" class="imgLogo" draggable="false"></a></li>
-      
-          <li>
-            <button class="AccionesDirectos" onclick="toggleSubMenu(this)">
-              <ion-icon name="cart-outline" class="Icono"></ion-icon>
-              <span class="link">Compras</span>
-            </button>
-            <ul class="sub-menu-v">
-              <li class="sub-link"><a href="#">Ver Compras</a></li>
-              <li class="sub-link"><a href="#">Ver Proveedores</a></li>
-              <li class="sub-link"><a href="#"></a></li>
-            </ul>
-          </li>
-          
-          <li>
-            <button class="AccionesDirectos" onclick="toggleSubMenu(this)">
-              <ion-icon name="stats-chart-outline" class="Icono"></ion-icon>
-              <span class="link">Ventas</span>
-            </button>
-            <ul class="sub-menu-v">
-              <li class="sub-link"><a href="#">Ver Ventas</a></li>
-              <li class="sub-link"><a href="#"></a></li>
-              <li class="sub-link"><a href="#"></a></li>
-            </ul>
-          </li>
-          
-          <li>
-            <button class="AccionesDirectos" onclick="toggleSubMenu(this)">
-              <ion-icon name="cube-outline" class="Icono"></ion-icon>
-              <span class="link">Inventario</span>
-            </button>
-            <ul class="sub-menu-v">
-              <li class="sub-link"><a href="#">Ver Inventario</a></li>
-              <li class="sub-link"><a href="#"></a></li>
-              <li class="sub-link"><a href="#"></a></li>
-            </ul>
-          </li>
-           </ul>
-      </nav>
+<?php include('menuV.php');?>
     <div class="container">
 
                 <div class="card">
