@@ -14,12 +14,6 @@
                 <div class="card">
                     <div class="card-body">         
                     <form action="" method="post">
-                      <div class="headerform">
-                        
-                        <input type="text" autocomplete="off" class="filtro" placeholder="Buscar registros">
-                        <button type="submit" value="IniciarSesion" name="btn_agregar" class="btnAgregar">Agregar</button>
-      
-                      </div>
         
                         <div class="inputBox">
                             <div class="containerInput">
@@ -64,9 +58,10 @@
 
                       
                         </div>
+                        <button type="submit" value="IniciarSesion" name="btn_agregar" class="btnAgregar">Agregar</button>
         
 
-                                </div>
+                        </div>
                     </form>
                 </div>
     </div>

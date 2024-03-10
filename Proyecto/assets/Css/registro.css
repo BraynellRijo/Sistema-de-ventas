@@ -92,12 +92,11 @@ a{
     margin-right: 30px;
 }
 
-
-
 .btnAgregar{
     width: 10%;
     margin: 15px;
     border: none;
+    float: right;
     border-radius: 8px;
     padding: 10px;
     font-size: 1.2em;

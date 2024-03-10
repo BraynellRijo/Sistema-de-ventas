@@ -45,12 +45,15 @@ class Compras{
                     while ($Compras = mysqli_fetch_array($resultado)) {
                 ?>
                  <tr>
-                    <td> <?php $Compras['IdCompra']?> </td>
-                    <td> <?php $Compras['IdProveedor']?> </td>
-                    <td> <?php $Compras['IdProducto']?> </td>
-                    <td> <?php $Compras['NombreProducto']?> </td>
-                    <td> <?php $Compras['FechaCompra']?> </td>
-                    <td> <?php $Compras['CantidadProducto']?> </td>
+                    <td> <?php echo $Compras[$this->$IdCompra];?> </td>
+                    <td> <?php echo $Compras[$this->IdProducto];?> </td>
+                    <td> <?php echo $Compras[$this->NombreProducto];?> </td>
+                    <td> <?php echo $Compras[$this->IdProveedor];?> </td>
+                    <td> <?php echo $Compras[$this->$FechaCompra];?> </td>
+                    <td> <?php echo $Compras[$this->$CantidadCompra];?> </td>
+                    <td> <?php echo $Compras[$this->$IdLote];?> </td>
+                    <td> <?php echo $Compras[$this->$Estado];?> </td>
+                    <td> <?php echo $Compras[$this->$CostoTotal];?> </td>
                     <td class="acciones"> 
                     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
                         <ion-icon name="pencil-sharp"class="btnEditar"></ion-icon>

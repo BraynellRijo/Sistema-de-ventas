@@ -29,7 +29,7 @@
 
             <form id="ComprasForm" method="POST" action="" class="ConsultaTable">
 
-                    <input type="text" name="input_id" id="input_id" placeholder="Ingrese el ID del Cliente" autocomplete="off">
+                    <input type="text" name="input_id" id="input_id" placeholder="Ingrese el ID de la compra" autocomplete="off">
                 
                 <button type="submit" class="btnConsultar" name="btn_Consultar"><ion-icon name="search-outline" class="iconConsulta"></ion-icon></button>
             </form>
@@ -38,41 +38,40 @@
         </div>
         
         <table id="data-table">
-            <thead>
-                <tr>
-                    <th>ID del Cliente</th>
-                    <th>Nombre y Apellido</th>
-                    <th>Género</th>
-                    <th>Fecha de Nacimiento</th>
-                    <th>Teléfono</th>
-                    <th>Correo Electrónico</th>
-                    <th></th>
-                </tr>
-            </thead>
-            <tbody id="tablaDatos">
                 <?php
                 include('ConexionDB.php');
-                $existe = 0;
                 
-                if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['input_id']) && !empty($_POST['input_id'])) {
-                    $Idc = $_POST['input_id'];
+                if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['Compra_id']) && !empty($_POST['Compra_id'])) {
+                    $Idc = $_POST['Compra_id'];
                     $QueryCompras = "SELECT * FROM compras WHERE IdCompra = $Idc";
                     $resultado = mysqli_query($conn, $QueryCompras);
                 } else {
+                    // Si no se ha enviado un ID de compra, mostrar todos los resultados
                     $QueryCompras = "SELECT * FROM compras";
                     $resultado = mysqli_query($conn, $QueryCompras);
                 }
                 
                 if (mysqli_num_rows($resultado) > 0) {
+                    echo "<thead><tr>";
+                    while ($fieldinfo = mysqli_fetch_field($resultado)) {
+                        echo "<th>" . $fieldinfo->name . "</th>";
+                    }
+                    echo "<th>Acciones</th></tr></thead>";
+                
                     while ($Compras = mysqli_fetch_array($resultado)) {
                 ?>
+                <tbody id="tablaDatos">
                  <tr>
-                    <td> <?php $Compras['IdCompra']?> </td>
-                    <td> <?php $Compras['IdProveedor']?> </td>
-                    <td> <?php $Compras['IdProducto']?> </td>
-                    <td> <?php $Compras['NombreProducto']?> </td>
-                    <td> <?php $Compras['FechaCompra']?> </td>
-                    <td> <?php $Compras['CantidadProducto']?> </td>
+                    <td> <?php echo $Compras['IdCompra'];?> </td>
+                    <td> <?php echo $Compras['IdProveedor'];?> </td>
+                    <td> <?php echo $Compras['NombreProveedor'];?> </td>
+                    <td> <?php echo $Compras['IdProducto'];?> </td>
+                    <td> <?php echo $Compras['NombreProducto'];?> </td>
+                    <td> <?php echo $Compras['FechaCompra'];?> </td>
+                    <td> <?php echo $Compras['CantidadProducto'];?> </td>
+                    <td> <?php echo $Compras['IdLote'];?> </td>
+                    <td> <?php echo $Compras['Estado'];?> </td>
+                    <td> <?php echo $Compras['CostoTotal'];?> </td>
                     <td class="acciones"> 
                     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
                         <ion-icon name="pencil-sharp"class="btnEditar"></ion-icon>
@@ -80,8 +79,8 @@
                         <ion-icon name='trash-outline' class='btnEliminar'></ion-icon> 
                     </td>
                 </tr>
-            <?php include('modal.php');?>
-                <?php $existe++; 
+                    <?php include('./modal.php');?>
+                <?php 
                 }    
                 }else {
                         echo "No se encontraron datos para mostrar.";

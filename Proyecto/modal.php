@@ -1,5 +1,3 @@
-<!-- Button trigger modal -->
-
 
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -43,12 +41,7 @@
           <label for="confirmPassword" class="titleInput">Id Lote</label>
           <input type="password" name="confirmPassword" class="inputs" autocomplete="off">
       </div>  
-      
-        <?php 
-        include('ConexionDB.php');
-        include('Entity/Compras.php');
-          
-        ?>
+
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
